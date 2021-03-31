@@ -1,0 +1,337 @@
+
+body{
+	
+	font-weight:bold;
+	background-color: grey;
+	background-clip: border-box;
+	background-image: linear-gradient(30deg, green,purple,darkgreen,blue,yellow,cyan,violet,indigo,red);
+}
+.heading1{
+	display:none;
+}
+.heading{
+	display:block;
+}
+
+
+
+div h1.border{
+	border-bottom: 3px groove black;
+	text-align: center;
+	background-image: url(1.jpg);
+}
+
+.underline{
+	font-size:25px;
+	text-decoration: overline underline;
+}
+
+#datebox{
+	font-size:22px;
+	text-decoration: overline underline;
+	text-shadow: 2px 1px skyblue;
+
+}
+
+.red{
+	color: black;
+	
+	margin-top:10px;
+	text-align: right;
+	float:right;
+	
+}	
+
+textarea,input,option,select{
+	border:2px solid black;
+}
+
+.cssbox{
+	padding: 20px 20px 20px 20px;
+	border: black 4px solid;
+	box-shadow: inset 0 0 50px black;
+	
+	background-color: silver;
+}
+
+
+a:link{
+	color:purple;
+}
+
+a:visited{
+	color:black;
+}
+
+a:hover{
+	color: red;
+	box-shadow: 4px 4px 2px grey;
+	cursor:grab;
+
+}
+
+.highlight{
+	background-color: lime;
+	font-style:italic;
+}
+
+.imgright{
+	display:block;
+	
+	margin-left: 91%;
+}
+.center{
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+ul{
+
+	list-style: none;
+	padding:0;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 20px;
+ 	font-family: georgia;
+ 	vertical-align: middle;
+
+
+}
+ul li a{
+	background-color: lime;
+	box-shadow: inset 0 0 15px darkgreen;
+	display: block;
+	width:175px;
+	margin-right: 20px;
+	margin-top:auto; 
+	margin-bottom: auto;
+	padding: 10px;
+	text-decoration: none;
+	border:solid 4px black;
+	text-shadow: 4px;
+	height:25px;
+	line-height: 25px;
+	vertical-align: middle;
+
+}
+
+
+ul li a:hover{
+	background-color: skyblue;
+	box-shadow: inset 0 0 15px blue;
+	position: relative;
+	top: -0.3em;
+	color:red;
+	border-bottom: groove 6px grey;
+	border-left: groove 6px grey;
+
+}
+#nav{
+	border:solid 4px black;
+	box-shadow: inset 0 0 50px grey;
+	padding:10px;
+}
+#nav ul{
+	list-style-type: none;
+}
+#nav li{
+	display: inline-block;
+}
+
+#theform{
+	display: table;
+	border:solid 5px black;
+	padding:15px;
+	background-image: linear-gradient(150deg, violet,cyan);
+	font-size: 19px;
+}
+
+#theform div{
+	display:table-row;
+}
+
+
+.formrow label{
+	display:table-cell;
+	text-align: left;
+	padding:0;
+	margin-left: 5px;
+
+	position:relative;
+	margin-left: 5px;
+
+	
+}
+
+.formrow input{
+	display:table-cell;
+	display: block;
+	
+	margin-left: 5px;
+}
+
+*{
+	text-shadow: 2px 1px orange;
+}
+
+.box{
+box-shadow: inset 0 0 25px black;
+}
+
+.main{
+	border-bottom: 3px groove black;
+	background-image: url(16742.jpg);
+	height:75px;
+}
+h1{
+	margin-left: 5px;
+	line-height: 75px;
+}
+	
+img{
+	display:block;
+	float:right;
+	max-height:100%;
+	max-width: 100%;
+	margin-bottom: 0;
+	margin-top: 0;
+
+}
+
+
+#tempbox{
+	border: solid 3px black;
+	padding: 10px;
+	box-shadow: inset 0 0 8px brown;
+}
+
+#mainstorebox{
+	border: solid 3px black;
+	padding: 15px;
+}
+
+#divstorebox{
+
+	background-color: silver; padding: 15px;
+	font-size: 30px;
+	overflow: scroll;
+	border:solid 4px black;	
+	max-height: 35px;
+
+}
+
+
+.humibox{
+	border: solid 3px black;
+	padding: 10px;
+	box-shadow: inset 0 0 8px brown;
+}
+
+.reduce{
+	
+	text-shadow: 2px 1px orange;
+	color:green;
+	font-style: bolder;
+}
+
+.newbox{
+	style= "padding:3px; 
+	margin-top: auto; 
+	margin-bottom: auto;"
+}
+
+
+
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 225px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 65%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+
+
+@media only screen(max-width: 730px){
+
+
+.center, p.underline, a.cssbox.box, .notheory, #nav, {
+	display:none;
+}
+
+iframe.cssbox.box{
+	display:none;
+}
+
+.main{
+	border-bottom: 3px groove black;
+	background-image: url(16742.jpg);
+	height:60px;
+}
+h1{
+	font-size:22px;
+	margin-left: 5px;
+	line-height: 75px;
+}
+p.red.underline{
+	display:block;
+}
+
+
+}
+
+/*<h1 class="border layout" >Web page to collect 
+temperature and humidity sensor values</h1>
+class="cssbox imgright"*/

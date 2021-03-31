@@ -1,0 +1,77 @@
+.center, p.underline, a.cssbox.box{
+	display:none;
+}
+
+iframe.cssbox.box{
+	width: 450px;
+	height:400px;
+}
+
+.main{
+	border-bottom: 3px groove black;
+	background-image: url(16742.jpg);
+	height:60px;
+}
+h1{
+	font-size:22px;
+	margin-left: 5px;
+	line-height: 75px;
+}
+p.red.underline{
+	display:block;
+}
+
+.notheory{
+	display: none;
+}
+.cssbox{
+	padding: 10px;
+	margin:auto;	 
+}
+
+h1.underline{
+	font-size:18px;
+	text-decoration: none;
+	display: inline-block;
+
+}
+
+.underline{
+	font-size:18px;
+
+}
+
+.humibox{
+	font-size:20px;
+	padding: 5px;
+}
+
+.reduce{
+	font-size:19px;
+	padding: 5px;
+	text-decoration: none;
+	text-shadow: 2px 1px orange;
+	color:green;
+	font-style: bolder;
+}
+
+#tempbox{
+	font-size:20px;
+	padding: 5px;
+}
+
+#datebox{
+	font-size:14px;
+	text-decoration: overline underline;
+	text-shadow: 2px 1px skyblue;
+}
+.heading{
+	display:none;
+}
+.heading1{
+	display: block;
+}
+
+body{
+	background-image: linear-gradient( #f4a03f,#16a085);  
+}

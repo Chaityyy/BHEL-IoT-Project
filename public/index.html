@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+	<title>PS1 IoT Project</title>
+	<link rel="icon" href="iot3.png">
+
+<link rel="Stylesheet" type="text/css" href="Stylesheet.css">
+
+<link rel="Stylesheet" type="text/css" media="(max-width:730px)" href="Stylesheet2.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+
+
+
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-database.js"></script>
+</head>
+
+<body>
+<div class="main" >
+	<img   src="bhel.png" >
+	<h1 class="heading">Web page for temp and humid display.</h1>	
+	<h1 class="heading1">  IoT Android App.</h1>		
+</div>
+<p class="red underline" style="font-size:18px;"> <i> IoT Project</i></p>
+
+	<p class="underline "> <b><i> I emphasis you all to surf this site to get a dynamic experience of Internet Of Things.</i></b></p> 
+<br>
+	
+<div class="notheory">
+	<p style="font-size: 1.3em; color:red; width:60%;height:200px; overflow: scroll;border:solid 3px purple; padding:10px; border-radius: 10px 0 0 0;background-image: linear-gradient(150deg, green,yellow,darkgreen,blue); ">
+		<img class="box" src="images.jpg" style="display:block; float:left; margin-right: 10px; border: solid 2px black; width:100px;">
+		The project we worked on gives a glimpse of exactly how the dream of humans to  to reduce the complexity of any work onto his fingertips or even without the use of fingertips, has come true. In short this project summarizes how exactly the <span class="highlight">Internet of Things</span> can accomplish this dream of humans. The project is to monitor the real time temperature and humidity of a room which is remotely located, on our own web site. The purpose is served by using a temperature and a humidity sensor which are electronic devices capable of sensing temperature and water vapour content in the surrounding air and responding by providing output analog signals generated due to varying output voltages based on the changes in the surrounding parameters. By using some mathematics the voltage values can be linearized and mapped to exact temperature and humidity values. The sensors are connected to an external hardware known as an IoT board having the capability to connect to a network and a programming device using wireless or wired connectivity. We are using in this project the most popular microcontroller based board i.e. Node-MCU or ESP8266. We call this complete interconnected hardware having a board, sensors and network connecting this device to the Internet as one of many IoT devices.
+The rest of the project deals with the use of a network such as an Internet or an intranet. The IoT device is made as a client using socket programming or simply by using libraries included in the Arduino IDE software. The client then requests the IoT server or the cloud or the database such as the Google Firebase, to store this real time sensor readings. The web browser client then simply requests this data from the IoT cloud and displays it.
+</p>
+	<br>
+</div>
+
+
+
+
+<br>
+<br>
+<div class="cssbox" style="background-color: silver;">
+		<h1><b><i>Hover over the  </i></b><strong>buttons</strong><b><i>  to know their functions. </i></b></h1>
+<br>
+</div>
+
+<br>
+<div id="nav">
+<ul>
+	<li><a onclick="changetoreal()" title="To display only the present sensor readings." >Only Real Time</a></li>
+
+	<li><a onclick="setInterval(changetostore, 2000)" title="To start storing sensor readings at an interval of 2 seconds.">Record Readings</a></li>
+
+	<li><a onclick="changetoprev()" title="To display all the stored readings from the time you started to record.">Stored Readings</a></li>
+
+	<li><a onclick="myFunction()" class="popup" title="Names of the developers of this site." >Developers<span class="popuptext" id="myPopup">Akshay Anand<br><br>Chaitanya Kulkarni<br><br>Chaitanya Vyas<br><br>Kartik Jhawar<br><br>Paras Taneja<br><br>Saketh Kalaga</span></a></li>
+
+</ul>
+</div>
+<br>
+
+
+<div  class="cssbox" style="background-color: silver; padding: 15px; font-size: 30px; overflow: scroll; border:solid 4px black; max-height: 525px;" >
+<fieldset style="border:solid 4px black;">
+<legend>	<h1  ><b><i class="underline">Real time Readings are displayed here-</i></b></h1></legend>
+
+<div class="newbox">
+<per class="reduce" style="text-shadow: 2px 1px orange; color:green; font-style: bolder;">Temperature is = <span id="tempDB" class="humibox"></span>&nbsp;°C.</per><br><br>
+
+
+<per class="reduce" style="text-shadow: 2px 1px orange; color:green; font-style: bolder;">Humidity is = <span id="humidDB" class="humibox"></span>&nbsp;%.</per><br>
+<br>
+</div>
+</fieldset>
+
+
+<div id="real1">
+
+<h1 class="underline"><b><i>Please use</i></b><strong> Ctrl+F </strong><b><i> to find the readings corresponding to a specific time after you click Stored Readings.</i></b></h1>
+__________________
+</div> 
+
+</div>
+
+<script type="text/javascript">
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDh-DoUBBKYi-imXRCddHllodhiqhQI3Tg",
+    authDomain: "tempandhumid123654789.firebaseapp.com",
+    databaseURL: "https://tempandhumid123654789.firebaseio.com",
+    projectId: "tempandhumid123654789",
+    storageBucket: "tempandhumid123654789.appspot.com",
+    messagingSenderId: "416102102243",
+    appId: "1:416102102243:web:b6f1b8a06865419ee701d6",
+    measurementId: "G-XGVRVE47VD"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+
+var database=firebase.database();
+
+var tempChangeRef= firebase.database().ref('Temperature/');
+var humidChangeRef= firebase.database().ref('Humidity/');
+
+var tempChange=document.getElementById("tempDB");
+var humidChange=document.getElementById("humidDB");
+
+
+tempChangeRef.on('value', function(snapshot){
+	var consoleval=snapshot.val();
+	console.log(consoleval);
+
+	tempChange.innerHTML = snapshot.val();
+
+});
+
+humidChangeRef.on('value', function(snapshot){
+	var consoleval=snapshot.val();
+	console.log(consoleval);
+
+	humidChange.innerText = snapshot.val();
+
+});
+
+  
+</script>
+
+<script type="text/javascript" src="button.js"></script>
+
+
+	
+
+
+</body>
+</html>

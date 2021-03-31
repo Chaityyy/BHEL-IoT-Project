@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html>
+<head><link rel="Stylesheet" type="text/css" href="C:\Users\Kartik\Desktop\arduino-nightly\PS1 IoT project files\HTML tuts\Stylesheet.css"></head>
+<body>
+<h1><b><i>Welcome to the survey for my web page</i></b></h1>
+<form id="theform" action="Next to next to next page.html" method="POST" onSubmit="return validateTextbox();">
+<div class="formrow">
+	<label  for="firstname">First name:</label>
+	<input type="text" id="firstname" name="" size="30"><br><br>
+</div>
+
+<div class="formrow">
+	<label for="lastname">Last name:</label>
+	<input type="text" id="lastname" size="30"><br><br>
+</div>
+
+<div class="formrow">
+	<label for="age">Age:</label>
+	<input type="number" id="age" min="1" max="30"><br><br>
+</div>
+
+<div class="formrow">
+	<label for="Birth">Birth date:</label>
+	<input type="date" id="Birth" ><br><br>
+</div>
+
+<div class="formrow">
+	<label for="area">Where do you stay:</label>
+		<select>
+			<option value="MH"> Maharashtra</option>
+			<option value="GJ"> Gujrat</option>
+			<option value="MP"> Madhya Pradesh</option>
+			<option value="KR"> Kerala</option>
+			<option value="NO"> None of the above</option>
+		</select>
+			<br><br>
+</div>
+
+<div>
+	<fieldset><legend>Please describe your interest in brief</legend>
+	<textarea rows="3" cols="70"></textarea></fieldset>
+</div>
+<div>
+	<p> How will you rate my web page,where 1 means excellent?</p>
+	<ol>
+	<li><input type="radio" name="preferlike" value=""></li><br>
+	<li><input type="radio" name="preferlike" value=""></li><br>
+	<li><input type="radio" name="preferlike" value=""></li><br>
+	<li><input type="radio" name="preferlike" value=""></li><br>
+	</ol>
+</div>
+<div>
+	<p> Please check the items you liked in my web page</p>
+	<input type="checkbox" name="prefer" value="">The first video.<br>
+	<input type="checkbox" name="prefer" value="">The second video.<br>
+	<input type="checkbox" name="prefer" value="">The logo.<br>
+	<input type="checkbox" name="prefer" value="">The survey.<br>
+	<input type="checkbox" name="prefer" value="" checked="checked">Well, any of the above but, you appreciate the creativity.<br><br>
+</div>
+<fieldset class="cssbox">
+<input type="submit" value="submit"  style="font-size:18px; color:green; border:solid 2px orange; background-color: violet; padding: 4px 4px 4px 4px;"><br>
+</fieldset>
+</form>
+
+
+	
+		
+<script src="Form validation.js"></script>
+</body>
+</html>
